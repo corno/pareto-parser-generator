@@ -1,5 +1,5 @@
 {
-  "name": "pareto-vscode-backend",
+  "name": "pareto-parser-generator",
   "version": "0.1.18",
   "description": "A library providing utilities for the VSCode language server",
   "main": "./dist/index.js",
@@ -28,7 +28,7 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "astn": "^0.111.19",
-    "pareto-standard-operations": "^0.1.12"
+    "astn": "^0.111.20",
+    "pareto-standard-operations": "^0.1.13"
   }
 }

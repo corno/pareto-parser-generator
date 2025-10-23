@@ -25,22 +25,20 @@ export type _T_Choice = {
 }
 
 export type _T_Composite_Expression = {
-    readonly 'items': _i_core._T_List<null, {
-        readonly 'item': _T_Item
-        readonly 'tail': _pt.Optional_Value<_i_core._T_State_Group<null, 
-            | readonly ['siblings', {
-                readonly 'items': _i_core._T_List<null, _T_Item>
-            }]
-            | readonly ['special', {
-                readonly 'item': _T_Item
-                readonly 'operator': _i_core._T_State_Group<null, 
-                    | readonly ['**', null]
-                    | readonly ['++', null]
-                    | readonly ['-', null]
-                >
-            }]
-        >>
-    }>
+    readonly 'head': _T_Item
+    readonly 'tail': _pt.Optional_Value<_i_core._T_State_Group<null, 
+        | readonly ['siblings', {
+            readonly 'items': _i_core._T_List<null, _T_Item>
+        }]
+        | readonly ['special', {
+            readonly 'item': _T_Item
+            readonly 'operator': _i_core._T_State_Group<null, 
+                | readonly ['**', null]
+                | readonly ['++', null]
+                | readonly ['-', null]
+            >
+        }]
+    >>
 }
 
 export type _T_Grammar = {
@@ -162,95 +160,64 @@ export namespace _T_Choice {
 
 export namespace _T_Composite_Expression {
     
-    export namespace items {
+    export namespace head {
+    }
+    export type head = _T_Item
+    
+    export namespace tail {
         
-        export namespace L {
+        export namespace O {
             
-            export namespace item {
-            }
-            export type item = _T_Item
-            
-            export namespace tail {
+            export namespace SG {
                 
-                export namespace O {
+                export namespace siblings {
                     
-                    export namespace SG {
+                    export namespace items {
                         
-                        export namespace siblings {
-                            
-                            export namespace items {
-                                
-                                export namespace L {
-                                }
-                                export type L = _T_Item
-                            }
-                            export type items = _i_core._T_List<null, _T_Item>
+                        export namespace L {
                         }
-                        export type siblings = {
-                            readonly 'items': _i_core._T_List<null, _T_Item>
-                        }
-                        
-                        export namespace special {
-                            
-                            export namespace item {
-                            }
-                            export type item = _T_Item
-                            
-                            export namespace operator {
-                                
-                                export namespace SG {
-                                    export type $sr_$sr_ = null
-                                    export type $pl_$pl_ = null
-                                    export type $mi_ = null
-                                }
-                                export type SG = 
-                                    | readonly ['**', null]
-                                    | readonly ['++', null]
-                                    | readonly ['-', null]
-                            }
-                            export type operator = _i_core._T_State_Group<null, 
-                                | readonly ['**', null]
-                                | readonly ['++', null]
-                                | readonly ['-', null]
-                            >
-                        }
-                        export type special = {
-                            readonly 'item': _T_Item
-                            readonly 'operator': _i_core._T_State_Group<null, 
-                                | readonly ['**', null]
-                                | readonly ['++', null]
-                                | readonly ['-', null]
-                            >
-                        }
+                        export type L = _T_Item
                     }
-                    export type SG = 
-                        | readonly ['siblings', {
-                            readonly 'items': _i_core._T_List<null, _T_Item>
-                        }]
-                        | readonly ['special', {
-                            readonly 'item': _T_Item
-                            readonly 'operator': _i_core._T_State_Group<null, 
-                                | readonly ['**', null]
-                                | readonly ['++', null]
-                                | readonly ['-', null]
-                            >
-                        }]
+                    export type items = _i_core._T_List<null, _T_Item>
                 }
-                export type O = _i_core._T_State_Group<null, 
-                    | readonly ['siblings', {
-                        readonly 'items': _i_core._T_List<null, _T_Item>
-                    }]
-                    | readonly ['special', {
-                        readonly 'item': _T_Item
-                        readonly 'operator': _i_core._T_State_Group<null, 
+                export type siblings = {
+                    readonly 'items': _i_core._T_List<null, _T_Item>
+                }
+                
+                export namespace special {
+                    
+                    export namespace item {
+                    }
+                    export type item = _T_Item
+                    
+                    export namespace operator {
+                        
+                        export namespace SG {
+                            export type $sr_$sr_ = null
+                            export type $pl_$pl_ = null
+                            export type $mi_ = null
+                        }
+                        export type SG = 
                             | readonly ['**', null]
                             | readonly ['++', null]
                             | readonly ['-', null]
-                        >
-                    }]
-                >
+                    }
+                    export type operator = _i_core._T_State_Group<null, 
+                        | readonly ['**', null]
+                        | readonly ['++', null]
+                        | readonly ['-', null]
+                    >
+                }
+                export type special = {
+                    readonly 'item': _T_Item
+                    readonly 'operator': _i_core._T_State_Group<null, 
+                        | readonly ['**', null]
+                        | readonly ['++', null]
+                        | readonly ['-', null]
+                    >
+                }
             }
-            export type tail = _pt.Optional_Value<_i_core._T_State_Group<null, 
+            export type SG = 
                 | readonly ['siblings', {
                     readonly 'items': _i_core._T_List<null, _T_Item>
                 }]
@@ -262,28 +229,8 @@ export namespace _T_Composite_Expression {
                         | readonly ['-', null]
                     >
                 }]
-            >>
         }
-        export type L = {
-            readonly 'item': _T_Item
-            readonly 'tail': _pt.Optional_Value<_i_core._T_State_Group<null, 
-                | readonly ['siblings', {
-                    readonly 'items': _i_core._T_List<null, _T_Item>
-                }]
-                | readonly ['special', {
-                    readonly 'item': _T_Item
-                    readonly 'operator': _i_core._T_State_Group<null, 
-                        | readonly ['**', null]
-                        | readonly ['++', null]
-                        | readonly ['-', null]
-                    >
-                }]
-            >>
-        }
-    }
-    export type items = _i_core._T_List<null, {
-        readonly 'item': _T_Item
-        readonly 'tail': _pt.Optional_Value<_i_core._T_State_Group<null, 
+        export type O = _i_core._T_State_Group<null, 
             | readonly ['siblings', {
                 readonly 'items': _i_core._T_List<null, _T_Item>
             }]
@@ -295,8 +242,21 @@ export namespace _T_Composite_Expression {
                     | readonly ['-', null]
                 >
             }]
-        >>
-    }>
+        >
+    }
+    export type tail = _pt.Optional_Value<_i_core._T_State_Group<null, 
+        | readonly ['siblings', {
+            readonly 'items': _i_core._T_List<null, _T_Item>
+        }]
+        | readonly ['special', {
+            readonly 'item': _T_Item
+            readonly 'operator': _i_core._T_State_Group<null, 
+                | readonly ['**', null]
+                | readonly ['++', null]
+                | readonly ['-', null]
+            >
+        }]
+    >>
 }
 
 export namespace _T_Grammar {
@@ -528,95 +488,64 @@ export namespace Choice {
 
 export namespace Composite_Expression {
     
-    export namespace items {
+    export namespace head {
+    }
+    export type head = _T_Item
+    
+    export namespace tail {
         
-        export namespace L {
+        export namespace O {
             
-            export namespace item {
-            }
-            export type item = _T_Item
-            
-            export namespace tail {
+            export namespace SG {
                 
-                export namespace O {
+                export namespace siblings {
                     
-                    export namespace SG {
+                    export namespace items {
                         
-                        export namespace siblings {
-                            
-                            export namespace items {
-                                
-                                export namespace L {
-                                }
-                                export type L = _T_Item
-                            }
-                            export type items = _i_core._T_List<null, _T_Item>
+                        export namespace L {
                         }
-                        export type siblings = {
-                            readonly 'items': _i_core._T_List<null, _T_Item>
-                        }
-                        
-                        export namespace special {
-                            
-                            export namespace item {
-                            }
-                            export type item = _T_Item
-                            
-                            export namespace operator {
-                                
-                                export namespace SG {
-                                    export type $sr_$sr_ = null
-                                    export type $pl_$pl_ = null
-                                    export type $mi_ = null
-                                }
-                                export type SG = 
-                                    | readonly ['**', null]
-                                    | readonly ['++', null]
-                                    | readonly ['-', null]
-                            }
-                            export type operator = _i_core._T_State_Group<null, 
-                                | readonly ['**', null]
-                                | readonly ['++', null]
-                                | readonly ['-', null]
-                            >
-                        }
-                        export type special = {
-                            readonly 'item': _T_Item
-                            readonly 'operator': _i_core._T_State_Group<null, 
-                                | readonly ['**', null]
-                                | readonly ['++', null]
-                                | readonly ['-', null]
-                            >
-                        }
+                        export type L = _T_Item
                     }
-                    export type SG = 
-                        | readonly ['siblings', {
-                            readonly 'items': _i_core._T_List<null, _T_Item>
-                        }]
-                        | readonly ['special', {
-                            readonly 'item': _T_Item
-                            readonly 'operator': _i_core._T_State_Group<null, 
-                                | readonly ['**', null]
-                                | readonly ['++', null]
-                                | readonly ['-', null]
-                            >
-                        }]
+                    export type items = _i_core._T_List<null, _T_Item>
                 }
-                export type O = _i_core._T_State_Group<null, 
-                    | readonly ['siblings', {
-                        readonly 'items': _i_core._T_List<null, _T_Item>
-                    }]
-                    | readonly ['special', {
-                        readonly 'item': _T_Item
-                        readonly 'operator': _i_core._T_State_Group<null, 
+                export type siblings = {
+                    readonly 'items': _i_core._T_List<null, _T_Item>
+                }
+                
+                export namespace special {
+                    
+                    export namespace item {
+                    }
+                    export type item = _T_Item
+                    
+                    export namespace operator {
+                        
+                        export namespace SG {
+                            export type $sr_$sr_ = null
+                            export type $pl_$pl_ = null
+                            export type $mi_ = null
+                        }
+                        export type SG = 
                             | readonly ['**', null]
                             | readonly ['++', null]
                             | readonly ['-', null]
-                        >
-                    }]
-                >
+                    }
+                    export type operator = _i_core._T_State_Group<null, 
+                        | readonly ['**', null]
+                        | readonly ['++', null]
+                        | readonly ['-', null]
+                    >
+                }
+                export type special = {
+                    readonly 'item': _T_Item
+                    readonly 'operator': _i_core._T_State_Group<null, 
+                        | readonly ['**', null]
+                        | readonly ['++', null]
+                        | readonly ['-', null]
+                    >
+                }
             }
-            export type tail = _pt.Optional_Value<_i_core._T_State_Group<null, 
+            export type SG = 
                 | readonly ['siblings', {
                     readonly 'items': _i_core._T_List<null, _T_Item>
                 }]
@@ -628,28 +557,8 @@ export namespace Composite_Expression {
                         | readonly ['-', null]
                     >
                 }]
-            >>
         }
-        export type L = {
-            readonly 'item': _T_Item
-            readonly 'tail': _pt.Optional_Value<_i_core._T_State_Group<null, 
-                | readonly ['siblings', {
-                    readonly 'items': _i_core._T_List<null, _T_Item>
-                }]
-                | readonly ['special', {
-                    readonly 'item': _T_Item
-                    readonly 'operator': _i_core._T_State_Group<null, 
-                        | readonly ['**', null]
-                        | readonly ['++', null]
-                        | readonly ['-', null]
-                    >
-                }]
-            >>
-        }
-    }
-    export type items = _i_core._T_List<null, {
-        readonly 'item': _T_Item
-        readonly 'tail': _pt.Optional_Value<_i_core._T_State_Group<null, 
+        export type O = _i_core._T_State_Group<null, 
             | readonly ['siblings', {
                 readonly 'items': _i_core._T_List<null, _T_Item>
             }]
@@ -661,8 +570,21 @@ export namespace Composite_Expression {
                     | readonly ['-', null]
                 >
             }]
-        >>
-    }>
+        >
+    }
+    export type tail = _pt.Optional_Value<_i_core._T_State_Group<null, 
+        | readonly ['siblings', {
+            readonly 'items': _i_core._T_List<null, _T_Item>
+        }]
+        | readonly ['special', {
+            readonly 'item': _T_Item
+            readonly 'operator': _i_core._T_State_Group<null, 
+                | readonly ['**', null]
+                | readonly ['++', null]
+                | readonly ['-', null]
+            >
+        }]
+    >>
 }
 
 export namespace Grammar {

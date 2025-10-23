@@ -120,111 +120,94 @@ export const Composite_Expression: _i_signatures._T_Composite_Expression = ($, $
     $,
     {
         'properties': ($) => ({
-            'items': _pa.cc(_i_generic.get_entry(
+            'head': _pa.cc(_i_generic.get_entry(
                 $,
                 {
-                    'key': "items",
+                    'key': "head",
                 }
-            ), ($) => _i_generic.process_unconstrained_list(
+            ), ($) => Item(
                 $,
                 {
-                    'value': ($) => _i_generic.process_group(
+                    'value deserializers': $p['value deserializers'],
+                }
+            )),
+            'tail': _pa.cc(_i_generic.get_entry(
+                $,
+                {
+                    'key': "tail",
+                }
+            ), ($) => _i_generic.process_optional(
+                $,
+                {
+                    'value': ($) => _i_generic.process_unconstrained_state_group(
                         $,
                         {
-                            'properties': ($) => ({
-                                'item': _pa.cc(_i_generic.get_entry(
+                            'states': _pa.dictionary_literal({
+                                'siblings': ($): _i_out._T_Composite_Expression.tail.O.SG => ['siblings', _i_generic.process_group(
                                     $,
                                     {
-                                        'key': "item",
-                                    }
-                                ), ($) => Item(
-                                    $,
-                                    {
-                                        'value deserializers': $p['value deserializers'],
-                                    }
-                                )),
-                                'tail': _pa.cc(_i_generic.get_entry(
-                                    $,
-                                    {
-                                        'key': "tail",
-                                    }
-                                ), ($) => _i_generic.process_optional(
-                                    $,
-                                    {
-                                        'value': ($) => _i_generic.process_unconstrained_state_group(
-                                            $,
-                                            {
-                                                'states': _pa.dictionary_literal({
-                                                    'siblings': ($): _i_out._T_Composite_Expression.items.L.tail.O.SG => ['siblings', _i_generic.process_group(
+                                        'properties': ($) => ({
+                                            'items': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "items",
+                                                }
+                                            ), ($) => _i_generic.process_unconstrained_list(
+                                                $,
+                                                {
+                                                    'value': ($) => Item(
                                                         $,
                                                         {
-                                                            'properties': ($) => ({
-                                                                'items': _pa.cc(_i_generic.get_entry(
-                                                                    $,
-                                                                    {
-                                                                        'key': "items",
-                                                                    }
-                                                                ), ($) => _i_generic.process_unconstrained_list(
-                                                                    $,
-                                                                    {
-                                                                        'value': ($) => Item(
-                                                                            $,
-                                                                            {
-                                                                                'value deserializers': $p['value deserializers'],
-                                                                            }
-                                                                        ),
-                                                                    }
-                                                                )),
-                                                            }),
+                                                            'value deserializers': $p['value deserializers'],
                                                         }
-                                                    )],
-                                                    'special': ($): _i_out._T_Composite_Expression.items.L.tail.O.SG => ['special', _i_generic.process_group(
-                                                        $,
-                                                        {
-                                                            'properties': ($) => ({
-                                                                'item': _pa.cc(_i_generic.get_entry(
-                                                                    $,
-                                                                    {
-                                                                        'key': "item",
-                                                                    }
-                                                                ), ($) => Item(
-                                                                    $,
-                                                                    {
-                                                                        'value deserializers': $p['value deserializers'],
-                                                                    }
-                                                                )),
-                                                                'operator': _pa.cc(_i_generic.get_entry(
-                                                                    $,
-                                                                    {
-                                                                        'key': "operator",
-                                                                    }
-                                                                ), ($) => _i_generic.process_unconstrained_state_group(
-                                                                    $,
-                                                                    {
-                                                                        'states': _pa.dictionary_literal({
-                                                                            '**': ($): _i_out._T_Composite_Expression.items.L.tail.O.SG.special.operator.SG => ['**', _i_generic.process_nothing(
-                                                                                $,
-                                                                                null
-                                                                            )],
-                                                                            '++': ($): _i_out._T_Composite_Expression.items.L.tail.O.SG.special.operator.SG => ['++', _i_generic.process_nothing(
-                                                                                $,
-                                                                                null
-                                                                            )],
-                                                                            '-': ($): _i_out._T_Composite_Expression.items.L.tail.O.SG.special.operator.SG => ['-', _i_generic.process_nothing(
-                                                                                $,
-                                                                                null
-                                                                            )],
-                                                                        }),
-                                                                    }
-                                                                )),
-                                                            }),
-                                                        }
-                                                    )],
-                                                }),
-                                            }
-                                        ),
+                                                    ),
+                                                }
+                                            )),
+                                        }),
                                     }
-                                )),
+                                )],
+                                'special': ($): _i_out._T_Composite_Expression.tail.O.SG => ['special', _i_generic.process_group(
+                                    $,
+                                    {
+                                        'properties': ($) => ({
+                                            'item': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "item",
+                                                }
+                                            ), ($) => Item(
+                                                $,
+                                                {
+                                                    'value deserializers': $p['value deserializers'],
+                                                }
+                                            )),
+                                            'operator': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "operator",
+                                                }
+                                            ), ($) => _i_generic.process_unconstrained_state_group(
+                                                $,
+                                                {
+                                                    'states': _pa.dictionary_literal({
+                                                        '**': ($): _i_out._T_Composite_Expression.tail.O.SG.special.operator.SG => ['**', _i_generic.process_nothing(
+                                                            $,
+                                                            null
+                                                        )],
+                                                        '++': ($): _i_out._T_Composite_Expression.tail.O.SG.special.operator.SG => ['++', _i_generic.process_nothing(
+                                                            $,
+                                                            null
+                                                        )],
+                                                        '-': ($): _i_out._T_Composite_Expression.tail.O.SG.special.operator.SG => ['-', _i_generic.process_nothing(
+                                                            $,
+                                                            null
+                                                        )],
+                                                    }),
+                                                }
+                                            )),
+                                        }),
+                                    }
+                                )],
                             }),
                         }
                     ),

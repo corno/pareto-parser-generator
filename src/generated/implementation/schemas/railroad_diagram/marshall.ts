@@ -75,61 +75,59 @@ export const Choice: _i_signatures._T_Choice = ($, $p) => ['verbose group', _pa.
     ))]),
 })]
 export const Composite_Expression: _i_signatures._T_Composite_Expression = ($, $p) => ['verbose group', _pa.dictionary_literal({
-    'items': _pa.cc($['items'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
-        'item': _pa.cc($['item'], ($) => Item(
-            $,
-            {
-                'value serializers': $p['value serializers'],
+    'head': _pa.cc($['head'], ($) => Item(
+        $,
+        {
+            'value serializers': $p['value serializers'],
+        }
+    )),
+    'tail': _pa.cc($['tail'], ($) => ['optional', $.transform(
+        ($): _i_out._T_Value.SG.optional => ['set', ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+            switch ($[0]) {
+                case 'siblings': return _pa.ss($, ($) => ({
+                    'state': "siblings",
+                    'value': ['verbose group', _pa.dictionary_literal({
+                        'items': _pa.cc($['items'], ($) => ['list', $.map(($) => Item(
+                            $,
+                            {
+                                'value serializers': $p['value serializers'],
+                            }
+                        ))]),
+                    })],
+                }))
+                case 'special': return _pa.ss($, ($) => ({
+                    'state': "special",
+                    'value': ['verbose group', _pa.dictionary_literal({
+                        'item': _pa.cc($['item'], ($) => Item(
+                            $,
+                            {
+                                'value serializers': $p['value serializers'],
+                            }
+                        )),
+                        'operator': _pa.cc($['operator'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
+                            switch ($[0]) {
+                                case '**': return _pa.ss($, ($) => ({
+                                    'state': "**",
+                                    'value': ['nothing', null],
+                                }))
+                                case '++': return _pa.ss($, ($) => ({
+                                    'state': "++",
+                                    'value': ['nothing', null],
+                                }))
+                                case '-': return _pa.ss($, ($) => ({
+                                    'state': "-",
+                                    'value': ['nothing', null],
+                                }))
+                                default: return _pa.au($[0])
+                            }
+                        })]),
+                    })],
+                }))
+                default: return _pa.au($[0])
             }
-        )),
-        'tail': _pa.cc($['tail'], ($) => ['optional', $.transform(
-            ($): _i_out._T_Value.SG.optional => ['set', ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
-                switch ($[0]) {
-                    case 'siblings': return _pa.ss($, ($) => ({
-                        'state': "siblings",
-                        'value': ['verbose group', _pa.dictionary_literal({
-                            'items': _pa.cc($['items'], ($) => ['list', $.map(($) => Item(
-                                $,
-                                {
-                                    'value serializers': $p['value serializers'],
-                                }
-                            ))]),
-                        })],
-                    }))
-                    case 'special': return _pa.ss($, ($) => ({
-                        'state': "special",
-                        'value': ['verbose group', _pa.dictionary_literal({
-                            'item': _pa.cc($['item'], ($) => Item(
-                                $,
-                                {
-                                    'value serializers': $p['value serializers'],
-                                }
-                            )),
-                            'operator': _pa.cc($['operator'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
-                                switch ($[0]) {
-                                    case '**': return _pa.ss($, ($) => ({
-                                        'state': "**",
-                                        'value': ['nothing', null],
-                                    }))
-                                    case '++': return _pa.ss($, ($) => ({
-                                        'state': "++",
-                                        'value': ['nothing', null],
-                                    }))
-                                    case '-': return _pa.ss($, ($) => ({
-                                        'state': "-",
-                                        'value': ['nothing', null],
-                                    }))
-                                    default: return _pa.au($[0])
-                                }
-                            })]),
-                        })],
-                    }))
-                    default: return _pa.au($[0])
-                }
-            })]],
-            () => ['not set', null]
-        )]),
-    })])]),
+        })]],
+        () => ['not set', null]
+    )]),
 })]
 export const Grammar: _i_signatures._T_Grammar = ($, $p) => ['verbose group', _pa.dictionary_literal({
     'productions': _pa.cc($['productions'], ($) => ['list', $.map(($) => ['verbose group', _pa.dictionary_literal({
